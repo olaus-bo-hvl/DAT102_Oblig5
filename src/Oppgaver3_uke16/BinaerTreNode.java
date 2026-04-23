@@ -1,23 +1,37 @@
 package Oppgaver3_uke16;
 
-public class BinaerTreNode {
-    int verdi;  //verdi i noden
-    BinaerTreNode hoyre;   //pekere til venstre og høyre barn
-    BinaerTreNode venstre;
-    int hogdeU; //høyden til undertreet med denne noden som rot
+public class BinaerTreNode<T extends Comparable<T>> {
 
-    public BinaerTreNode(int verdi){    //konstruktør
+    T verdi;
+    BinaerTreNode<T> venstre;
+    BinaerTreNode<T> hoyre;
+    int hogdeU;
+
+    public BinaerTreNode(T verdi){
         this.verdi = verdi;
         this.venstre = null;
         this.hoyre = null;
         this.hogdeU = 1;
     }
 
-    public int getHogdeU(){ //get metode
+    // brukes av InordenBST
+    public T getElement() {
+        return verdi;
+    }
+
+    public BinaerTreNode<T> getVenstre() {
+        return venstre;
+    }
+
+    public BinaerTreNode<T> getHoyre() {
+        return hoyre;
+    }
+
+    public int getHogdeU(){
         return hogdeU;
     }
 
-    public void setHogdeU(int hogdeU){  //set metode
+    public void setHogdeU(int hogdeU){
         this.hogdeU = hogdeU;
     }
 }

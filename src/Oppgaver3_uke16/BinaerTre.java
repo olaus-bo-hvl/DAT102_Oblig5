@@ -1,13 +1,14 @@
 package Oppgaver3_uke16;
 
-public class BinaerTre {
-    BinaerTreNode rot;
+public class BinaerTre<T extends Comparable<T>> {
 
-    public BinaerTre(){ //konstruktør
+    BinaerTreNode<T> rot;
+
+    public BinaerTre(){
         rot = null;
     }
 
-    private int hentHogde(BinaerTreNode node){
+    private int hentHogde(BinaerTreNode<T> node){
         if(node == null){
             return 0;
         }
@@ -18,18 +19,19 @@ public class BinaerTre {
         return erBalansert(rot);
     }
 
-    private boolean erBalansert(BinaerTreNode node){
+    private boolean erBalansert(BinaerTreNode<T> node){
         if(node == null){
             return true;
         }
 
-        int venstreH = hentHogde(node.venstre);
-        int hoyreH = hentHogde(node.hoyre);
+        int venstreH = hentHogde(node.getVenstre());
+        int hoyreH = hentHogde(node.getHoyre());
 
-        //sjekker balansen
-        if(Math.abs(venstreH - hoyreH)>1){
+        if(Math.abs(venstreH - hoyreH) > 1){
             return false;
         }
-        return erBalansert(node.venstre) && erBalansert(node.hoyre);
+
+        return erBalansert(node.getVenstre()) &&
+                erBalansert(node.getHoyre());
     }
 }

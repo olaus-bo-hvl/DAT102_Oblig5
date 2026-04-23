@@ -2,7 +2,8 @@ package Oppgaver3_uke16;
 
 public class BinaerTreNode {
     int verdi;  //verdi i noden
-    BinaerTreNode venstre, hoyre;   //pekere til venstre og høyre barn
+    BinaerTreNode hoyre;   //pekere til venstre og høyre barn
+    BinaerTreNode venstre;
     int hogdeU; //høyden til undertreet med denne noden som rot
 
     public BinaerTreNode(int verdi){    //konstruktør

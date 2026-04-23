@@ -1,10 +1,13 @@
 package Oppgave2_uke16;
 
-public class InordenBST {
+import Oppgaver3_uke16.BinaerTreNode;
+
+public class InordenBST<T extends Comparable<T>>  {
+
+    BinaerTreNode<T> rot;
 
     public void skrivVerdier(T nedre, T ovre) {
         skrivVerdierRek(rot, nedre, ovre);
-
     }
 
     private void skrivVerdierRek(BinaerTreNode<T> t, T min, T maks) {
@@ -29,7 +32,7 @@ public class InordenBST {
         }
         // nåværende node mindre enn største node
         if (t.getElement().compareTo(maks) < 0) {
-            skrivVerdierRek(t.getHogre(), min, maks);
+            skrivVerdierRek(t.getHoyre(), min, maks);
         }
     }
 }

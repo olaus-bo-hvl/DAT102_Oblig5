@@ -63,7 +63,47 @@ c) ii) 4 10 14 8 7 13 6 2 5 13
 
 d) det er haugsortering, man bygger først en haug, deretter flytter største element til slutten av arrayet.
 
-e) holder på, papir-oppg
+e) lengde = 10, 10 / 2 = (i)ndeks 5, figurer under: i=5,4,3,2,1.
+
+            10
+          /     \
+        6        8
+       /  \     /  \
+      7    1   5    4
+    /   \  /
+   3     2 9
+
+            10
+          /     \
+        6        8
+       /  \     /  \
+      2    1   5    4
+    /   \  /
+   3     7 9
+
+            10
+          /     \
+        6        4
+       /  \     /  \
+      2    1   5    8
+    /   \  /
+   3     7 9
+
+            10
+          /     \
+        1        4
+       /  \     /  \
+      2    6   5    8
+    /   \  /
+   3     7 9
+
+            1
+          /     \
+        2        4
+       /  \     /  \
+      3    6   5    8
+    /   \  /
+   10    7 9
 
 */
 }
